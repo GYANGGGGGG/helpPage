@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>帮助中心</title>
+    <script src="__PUBLIC__/Teen/Classplatform/js/marked.js"></script>
+    <script src="__PUBLIC__/Teen/Classplatform/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Teen/Classplatform/js/vue.js"></script>
+
+    <link rel="stylesheet" href="__PUBLIC__/Teen/Classplatform/css/style.css">
+    <link rel="stylesheet" href="__PUBLIC__/Teen/Classplatform/css/style-small.css">
+</head>
+<body>
+<div id="all">
+      <div id="mobile-bar">
+        <a class="menu-button" v-on:click="menu_toggle"></a>
+        <a class="logo" href="#"></a>
+    </div>
+
+    <div id="header">
+        <a id="logo" href="#"><img src="__PUBLIC__/Teen/Classplatform/images/logo.png"></a>
+    </div>
+
+    <div id="main">
+        <div class="sidebar" v-bind:class="{ open: isOpen }">
+
+          <div class="sidebar-inner">
+            <div class="top">技术服务热线</br>
+          0571 - 6666666</br>
+        （仅解决兰迪上课平台问题）</div>
+            <div class="list">
+              <ul class="menu-root" id="menu_h" >
+
+              <template v-for="(item, index) in items">
+              <li><img 
+                v-on:click="d_toggle(index)" 
+                v-if="item.children[0]" 
+                src="__PUBLIC__/Teen/Classplatform/images/xiala.png" 
+                v-bind:key="index"
+                class="open" 
+                >
+              <a 
+              v-on:click="selected(item.headTitle)" 
+              @click="menu_toggle"
+              v-bind:href="'#'+item.headTitle"
+              :class="{active: mActiveName_h2 == item.headTitle}">{{item.headTitle}}
+              </a>
+              </li>
+
+              <ul class="menu-sub ">
+                <li v-for="child in item.children">
+                <a 
+                v-on:click="selected(item.headTitle,child.headTitle)" 
+                @click="menu_toggle"
+                class="section-link" 
+                v-bind:href="'#'+child.headTitle"
+                :class="{active: mActiveName_h3 == child.headTitle}"
+                >{{child.headTitle}}</a></li>
+              </ul>
+              </template>
+
+              </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content with-sidebar"></div>
+  </div>
+</div>
+
+  
+</body>
+<script type="text/javascript" src="__PUBLIC__/Teen/Classplatform/js/vue-left.js"></script>
+<script>
+  
+</script>
+</html>

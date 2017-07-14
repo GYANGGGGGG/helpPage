@@ -1,0 +1,69 @@
+@media screen and (max-width: 1500px){
+    .content.with-sidebar {
+    margin-left: 290px;
+    }
+}
+
+@media (max-width: 900px){
+
+html {font-size: 62.5%;/*10 ÷ 16 × 100% = 62.5%*/}
+body {font-size: 1.4rem;/*1.4 × 10px = 14px */}
+h1 { font-size: 2.4rem;/*2.4 × 10px = 24px*/}
+h2 { font-size: 2.0rem;/*2.4 × 10px = 24px*/}
+h3 { font-size: 1.6rem;/*2.4 × 10px = 24px*/}
+#mobile-bar {
+    display: block;
+}
+#header {
+    display: none;
+}
+#main {
+    padding: 2em 1.4em 0;
+}
+.sidebar {
+    position: fixed;
+    z-index: 19;
+    background-color: #f9f9f9;
+    height: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0, 1);
+    -webkit-transform: translate(-280px, 0);
+    transform: translate(-280px, 0);
+}
+
+.sidebar.open {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+    background:rgba(242, 242, 242, 1);
+}
+.sidebar .sidebar-inner {
+    padding: 60px 30px 30px;
+    box-sizing: border-box;
+}
+.sidebar .sidebar-inner .top{
+    width: 192px;
+    height: 70px;
+}
+.content.with-sidebar {
+    margin: auto;
+
+}
+.content.with-sidebar img {
+    height: auto;
+    max-width: 320px;
+}
+.content.with-sidebar h2{
+	margin:-42px 0 0;/*强行把元素位置拉回原位*/
+	border-top:42px solid #f2f2f2;/*改变目标元素对于锚点的基点位置,这里可以用padding-top,但是有不一样的问题出现，都可以很简单解决，这里不详说了*/
+
+}
+.content.with-sidebar h3{
+	margin:-42px 0 0;/*强行把元素位置拉回原位*/
+	border-top:42px solid #f2f2f2;/*改变目标元素对于锚点的基点位置,这里可以用padding-top,但是有不一样的问题出现，都可以很简单解决，这里不详说了*/
+
+}
+   }
+
+

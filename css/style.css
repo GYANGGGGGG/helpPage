@@ -1,0 +1,186 @@
+body{
+	background: rgba(242, 242, 242, 1);
+	padding-top: 36px;
+    font-family: "Microsoft YaHei";
+    color: #34495e;
+}
+body,h1,h2,h3,p{
+	margin:0;
+	padding:0;
+}
+a {
+    text-decoration: none;
+    color: #34495e;
+    font-size: 17px;
+}
+#header {
+    background-color: #f2f2f2;
+    height: 41px;
+    padding: 10px 60px;
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+#header img{
+    width: 130px;
+}
+#mobile-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #f2f2f2;
+    z-index: 9;
+    display: none;
+
+}
+#mobile-bar .menu-button {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 8px;
+    left: 12px;
+    background: url(../images/menu.png) center center no-repeat;
+    background-size: 24px;
+    cursor: pointer;
+}
+#mobile-bar .logo {
+    position: absolute;
+    width: 46px;
+    height: 33px;
+    background: url(../images/logo.png) center center no-repeat;
+    top: 5px;
+    left: 50%;
+    margin-left: -15px;
+    background-size: 46px;
+}
+#main {
+    position: relative;
+    z-index: 1;
+    padding: 0 60px 30px;
+    overflow-x: hidden;
+}
+#main .sidebar {
+    position: fixed;
+}
+.sidebar {
+    position: absolute;
+    z-index: 10;
+    top: 30px;
+    left: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-shadow: 1px 0px 8px rgba(68, 85, 51, 0.51);
+}
+.sidebar a.active{
+    color: #1bb7c7;
+}
+.sidebar ul{
+	list-style-type: none;
+    margin: 0;
+    line-height: 1.5em;
+    padding-left: 1em;
+
+}
+.sidebar ul>ul a{
+    color: rgba(62, 81, 95, 0.91);
+    font-size: 13px;
+}
+
+.sidebar li {
+    margin-top: 0.5em;
+}
+.sidebar li a:hover {
+    color: #1bb7c7;
+}
+.sidebar li img{
+    transform: rotate(-90deg);
+    display: block;
+    position: relative;
+    left: -11px;
+    top: 17px;
+    cursor: pointer;
+    transition: All 0.4s ease-in-out;
+    width: 8px;
+    opacity: 0.7;
+}
+.sidebar li img.open{
+   transform: rotate(0deg);
+}
+.sidebar .menu-sub {
+    font-size: 0.85em;
+
+}
+.sidebar .menu-sub.close {
+    display: none;
+}
+
+.sidebar .sidebar-inner {
+    width: 260px;
+    padding: 40px 20px 60px 60px;
+}
+.sidebar .sidebar-inner .top{
+    width: 220px;
+    height: 78px;
+    border-radius: 10px;
+    background-color: rgb(232, 232, 232);
+    text-align: center;
+    padding: 12px 5px 2px 5px;
+}
+.content.with-sidebar {
+
+    position: relative;
+    padding: 2.2em 0;
+    max-width: 660px;
+    margin: 0 auto;
+    padding-left: 80px;
+
+}
+.content.with-sidebar img{
+    height: auto;
+    max-width:500px; 
+}
+.content.with-sidebar p,img{
+	z-index:3
+}
+.content.with-sidebar p{
+   padding: 20px 0px;
+}
+.content.with-sidebar p.extra{
+	margin:0 0 500px;/*最后一个p需要有一定的底端margin不然滚动条不够高度，会使达不到最后一个标题*/
+}
+.content.with-sidebar h2,h3,p,img{
+	position:relative;
+}
+
+.content.with-sidebar h2{
+	margin:-75px 0 0;/*强行把元素位置拉回原位*/
+	border-top:75px solid #f2f2f2;/*改变目标元素对于锚点的基点位置,这里可以用padding-top,但是有不一样的问题出现，都可以很简单解决，这里不详说了*/
+	z-index:2;
+    height: 80px;
+
+}
+.content.with-sidebar h2:after{
+    content: '';
+    display: block;
+    max-width: 600px;
+    height: 1px;
+    background: #ddd;
+    position: relative;
+    top: 15px;
+
+}
+.content.with-sidebar h3{
+	margin:-60px 0 0;/*强行把元素位置拉回原位*/
+	border-top:60px solid #f2f2f2;/*改变目标元素对于锚点的基点位置,这里可以用padding-top,但是有不一样的问题出现，都可以很简单解决，这里不详说了*/
+	z-index:1;
+    height: 40px;
+    padding-top: 40px;
+}
+
+.content.with-sidebar > h2{
+	margin:0;/*第一个元素不应该被拉回原位*/
+}
